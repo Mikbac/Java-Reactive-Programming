@@ -31,3 +31,6 @@
 * [Example 030 - Threads -- ArrayList vs CopyOnWriteArrayList vs Sink](examples/src/main/java/pl/mikbac/examples/example030)
 * [Example 031 - Production items earlier](examples/src/main/java/pl/mikbac/examples/example031)
 * [Example 032 - Production items on demand](examples/src/main/java/pl/mikbac/examples/example032)
+* [Example 033 - Operators take, takeWhile, takeUntil](examples/src/main/java/pl/mikbac/examples/example033)
+* [Example 034 - Operator generate](examples/src/main/java/pl/mikbac/examples/example034)
+* [Example 035 - Operator generate with read file example](examples/src/main/java/pl/mikbac/examples/example035)
