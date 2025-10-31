@@ -2,7 +2,10 @@
 
 ## Notes
 
-* [Basic.md](docs/000-Basic.md)
+* [000-Basic](docs/000-Basic.md)
+* [001-Reactive-Programming](docs/001-Reactive-Programming.md)
+* [100-Reactor](docs/100-Reactor.md)
+* [101-Hot-and-cold-publishers](docs/101-Hot-and-cold-publishers.md)
 
 ## Examples
 
@@ -34,3 +37,10 @@
 * [Example 033 - Operators take, takeWhile, takeUntil](examples/src/main/java/pl/mikbac/examples/example033)
 * [Example 034 - Operator generate](examples/src/main/java/pl/mikbac/examples/example034)
 * [Example 035 - Operator generate with read file example](examples/src/main/java/pl/mikbac/examples/example035)
+* [Example 036 - Operators handle and cast](examples/src/main/java/pl/mikbac/examples/example036)
+* [Example 037 - Callbacks](examples/src/main/java/pl/mikbac/examples/example037)
+* [Example 038 - Operators delayElements, defaultIfEmpty, switchIfEmpty](examples/src/main/java/pl/mikbac/examples/example038)
+* [Example 039 - Error handling](examples/src/main/java/pl/mikbac/examples/example039)
+* [Example 040 - Timeout operator](examples/src/main/java/pl/mikbac/examples/example040)
+* [Example 041 - Transform operator](examples/src/main/java/pl/mikbac/examples/example041)
+* [Example 041 - Cold publisher](examples/src/main/java/pl/mikbac/examples/example042)

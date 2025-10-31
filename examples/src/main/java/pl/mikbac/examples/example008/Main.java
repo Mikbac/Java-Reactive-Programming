@@ -1,7 +1,6 @@
 package pl.mikbac.examples.example008;
 
 import lombok.extern.slf4j.Slf4j;
-import pl.mikbac.examples.example006.SubscriberImpl;
 import reactor.core.publisher.Mono;
 
 import java.util.concurrent.CompletableFuture;

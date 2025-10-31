@@ -15,6 +15,8 @@
 
 ## Mono
 
+https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html
+
 | Method                                   | Description                                                                                  | Example                                                         |
 |------------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------|
 | `Mono.just(T value)`                     | Creates a `Mono` that emits the given non-null value and then completes.                     | `Mono.just("Hello")`                                            |
@@ -29,6 +31,8 @@
 | `Mono.create(Consumer<MonoSink<T>>)`     | Programmatically create a `Mono` by pushing a single value, an error, or completing.         | `Mono.create(sink -> sink.success("value"))`                    |
 
 ## Flux
+
+https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html
 
 | Method                             | Description                                                              | Example                                                        |
 |------------------------------------|--------------------------------------------------------------------------|----------------------------------------------------------------|
