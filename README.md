@@ -43,4 +43,5 @@
 * [Example 039 - Error handling](examples/src/main/java/pl/mikbac/examples/example039)
 * [Example 040 - Timeout operator](examples/src/main/java/pl/mikbac/examples/example040)
 * [Example 041 - Transform operator](examples/src/main/java/pl/mikbac/examples/example041)
-* [Example 041 - Cold publisher](examples/src/main/java/pl/mikbac/examples/example042)
+* [Example 042 - Cold publisher](examples/src/main/java/pl/mikbac/examples/example042)
+* [Example 043 - Hot publisher](examples/src/main/java/pl/mikbac/examples/example043)
