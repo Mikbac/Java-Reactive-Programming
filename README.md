@@ -45,3 +45,8 @@
 * [Example 041 - Transform operator](examples/src/main/java/pl/mikbac/examples/example041)
 * [Example 042 - Cold publisher](examples/src/main/java/pl/mikbac/examples/example042)
 * [Example 043 - Hot publisher](examples/src/main/java/pl/mikbac/examples/example043)
+* [Example 044 - Example subscribeOn](examples/src/main/java/pl/mikbac/examples/example044)
+* [Example 045 - Example subscribeOn -- with virtual threads](examples/src/main/java/pl/mikbac/examples/example045)
+* [Example 046 - Example publishOn](examples/src/main/java/pl/mikbac/examples/example046)
+* [Example 047 - Example subscribeOn with publishOn](examples/src/main/java/pl/mikbac/examples/example047)
+* [Example 048 - Parallel execution](examples/src/main/java/pl/mikbac/examples/example048)
