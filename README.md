@@ -6,6 +6,8 @@
 * [001-Reactive-Programming](docs/001-Reactive-Programming.md)
 * [100-Reactor](docs/100-Reactor.md)
 * [101-Hot-and-cold-publishers](docs/101-Hot-and-cold-publishers.md)
+* [102-Schedulers.md](docs/102-Schedulers.md)
+* [103-Backpressure.md](docs/103-Backpressure.md)
 
 ## Examples
 
@@ -50,3 +52,6 @@
 * [Example 046 - Example publishOn](examples/src/main/java/pl/mikbac/examples/example046)
 * [Example 047 - Example subscribeOn with publishOn](examples/src/main/java/pl/mikbac/examples/example047)
 * [Example 048 - Parallel execution](examples/src/main/java/pl/mikbac/examples/example048)
+* [Example 049 - Backpressure example](examples/src/main/java/pl/mikbac/examples/example049)
+* [Example 050 - Backpressure limitRate](examples/src/main/java/pl/mikbac/examples/example050)
+* [Example 051 - Backpressure onBackpressureBuffer, onBackpressureError, onBackpressureDrop, onBackpressureLatest](examples/src/main/java/pl/mikbac/examples/example051)
