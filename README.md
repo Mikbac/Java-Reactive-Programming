@@ -55,3 +55,4 @@
 * [Example 049 - Backpressure example](examples/src/main/java/pl/mikbac/examples/example049)
 * [Example 050 - Backpressure limitRate](examples/src/main/java/pl/mikbac/examples/example050)
 * [Example 051 - Backpressure onBackpressureBuffer, onBackpressureError, onBackpressureDrop, onBackpressureLatest](examples/src/main/java/pl/mikbac/examples/example051)
+* [Example 052 - Example startWith](examples/src/main/java/pl/mikbac/examples/example052)
