@@ -67,3 +67,8 @@
 * [Example 061 - Example collectList](examples/src/main/java/pl/mikbac/examples/example061)
 * [Example 062 - Example then](examples/src/main/java/pl/mikbac/examples/example062)
 * [Example 063 - Example zip + flatMap](examples/src/main/java/pl/mikbac/examples/example063)
+* [Example 064 - Example buffer](examples/src/main/java/pl/mikbac/examples/example064)
+* [Example 065 - Example buffer](examples/src/main/java/pl/mikbac/examples/example065)
+* [Example 066 - Example window](examples/src/main/java/pl/mikbac/examples/example066)
+* [Example 067 - Example groupBy](examples/src/main/java/pl/mikbac/examples/example067)
+* [Example 068 - Example groupBy](examples/src/main/java/pl/mikbac/examples/example068)
