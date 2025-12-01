@@ -72,3 +72,5 @@
 * [Example 066 - Example window](examples/src/main/java/pl/mikbac/examples/example066)
 * [Example 067 - Example groupBy](examples/src/main/java/pl/mikbac/examples/example067)
 * [Example 068 - Example groupBy](examples/src/main/java/pl/mikbac/examples/example068)
+* [Example 069 - Example repeat](examples/src/main/java/pl/mikbac/examples/example069)
+* [Example 070 - Example retry](examples/src/main/java/pl/mikbac/examples/example070)

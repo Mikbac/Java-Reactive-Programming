@@ -3,7 +3,6 @@ package pl.mikbac.examples.example063;
 import com.github.javafaker.Faker;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import pl.mikbac.examples.example062.SubscriberImpl;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

@@ -2,7 +2,6 @@ package pl.mikbac.examples.example064;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import pl.mikbac.examples.example062.SubscriberImpl;
 import reactor.core.publisher.Flux;
 
 import java.time.Duration;
