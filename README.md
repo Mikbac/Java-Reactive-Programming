@@ -74,3 +74,6 @@
 * [Example 068 - Example groupBy](examples/src/main/java/pl/mikbac/examples/example068)
 * [Example 069 - Example repeat](examples/src/main/java/pl/mikbac/examples/example069)
 * [Example 070 - Example retry](examples/src/main/java/pl/mikbac/examples/example070)
+* [Example 071 - Example sink one](examples/src/main/java/pl/mikbac/examples/example071)
+* [Example 072 - Example sink unicast](examples/src/main/java/pl/mikbac/examples/example072)
+* [Example 073 - Example sink multicast](examples/src/main/java/pl/mikbac/examples/example073)
