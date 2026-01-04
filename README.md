@@ -8,6 +8,9 @@
 * [101-Hot-and-cold-publishers](docs/101-Hot-and-cold-publishers.md)
 * [102-Schedulers.md](docs/102-Schedulers.md)
 * [103-Backpressure.md](docs/103-Backpressure.md)
+* [104-Combining-publishers.md](docs/104-Combining-publishers.md)
+* [105-Sinks.md](docs/105-Sinks.md)
+* [200-Spring-WebFlux.md](docs/200-Spring-WebFlux.md)
 
 ## Examples
 
@@ -79,3 +82,4 @@
 * [Example 073 - Example sink multicast](examples/src/main/java/pl/mikbac/examples/example073)
 * [Example 074 - Example sink replay](examples/src/main/java/pl/mikbac/examples/example074)
 * [Example 075 - Example context](examples/src/main/java/pl/mikbac/examples/example075)
+* [Example 100 - Webflux examples](examples/src/main/java/pl/mikbac/examples/example100)
