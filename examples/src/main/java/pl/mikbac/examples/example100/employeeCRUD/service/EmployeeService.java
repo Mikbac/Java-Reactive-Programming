@@ -1,6 +1,7 @@
 package pl.mikbac.examples.example100.employeeCRUD.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pl.mikbac.examples.example100.employeeCRUD.dto.EmployeeDto;
 import pl.mikbac.examples.example100.employeeCRUD.mapper.EmployeeMapper;
@@ -20,6 +21,11 @@ public class EmployeeService {
 
     public Flux<EmployeeDto> getAllEmployees() {
         return employeeRepository.findAll()
+                .map(EmployeeMapper::toDto);
+    }
+
+    public Flux<EmployeeDto> getAllEmployees(int page, int size) {
+        return employeeRepository.findBy(PageRequest.of(page - 1, size))
                 .map(EmployeeMapper::toDto);
     }
 
@@ -43,8 +49,8 @@ public class EmployeeService {
                 .map(EmployeeMapper::toDto);
     }
 
-    public Mono<Void> deleteEmployee(final Integer id) {
-        return employeeRepository.deleteById(id);
+    public Mono<Boolean> deleteEmployee(final Integer id) {
+        return employeeRepository.deleteEmployeeById(id);
     }
 
 }
