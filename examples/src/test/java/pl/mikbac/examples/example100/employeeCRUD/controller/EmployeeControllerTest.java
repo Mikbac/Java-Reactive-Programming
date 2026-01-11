@@ -3,15 +3,13 @@ package pl.mikbac.examples.example100.employeeCRUD.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import pl.mikbac.examples.example100.employeeCRUD.AbstractTest;
-import org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient;
 import pl.mikbac.examples.example100.employeeCRUD.dto.EmployeeDto;
 
 import java.util.Objects;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by MikBac on 5.01.2026
@@ -64,7 +62,7 @@ class EmployeeControllerTest extends AbstractTest {
 
     @Test
     public void createAndDeleteEmployee() {
-        EmployeeDto employee =  EmployeeDto.builder()
+        EmployeeDto employee = EmployeeDto.builder()
                 .name("t")
                 .email("t@t.com")
                 .build();
@@ -88,7 +86,7 @@ class EmployeeControllerTest extends AbstractTest {
 
     @Test
     public void updateEmployee() {
-        EmployeeDto employee =  EmployeeDto.builder()
+        EmployeeDto employee = EmployeeDto.builder()
                 .name("t")
                 .email("t@t.com")
                 .build();
@@ -110,15 +108,17 @@ class EmployeeControllerTest extends AbstractTest {
                 .uri("/employees/v1/99")
                 .exchange()
                 .expectStatus().is4xxClientError()
-                .expectBody().isEmpty();
+                .expectBody()
+                .jsonPath("$.title").isEqualTo("Employee Not Found");
 
         this.client.delete()
                 .uri("/employees/v1/99")
                 .exchange()
                 .expectStatus().is4xxClientError()
-                .expectBody().isEmpty();
+                .expectBody()
+                .jsonPath("$.title").isEqualTo("Employee Not Found");
 
-        EmployeeDto employee =  EmployeeDto.builder()
+        final EmployeeDto employee = EmployeeDto.builder()
                 .name("t")
                 .email("t@t.com")
                 .build();
@@ -127,7 +127,44 @@ class EmployeeControllerTest extends AbstractTest {
                 .bodyValue(employee)
                 .exchange()
                 .expectStatus().is4xxClientError()
-                .expectBody().isEmpty();
+                .expectBody()
+                .jsonPath("$.title").isEqualTo("Employee Not Found");
+    }
+
+    @Test
+    public void invalidInput() {
+        final EmployeeDto missingName = EmployeeDto.builder()
+                .email("t@t.com")
+                .build();
+        this.client.post()
+                .uri("/employees/v1")
+                .bodyValue(missingName)
+                .exchange()
+                .expectStatus().is4xxClientError()
+                .expectBody()
+                .jsonPath("$.title").isEqualTo("Invalid Input");
+
+        final EmployeeDto missingEmail = EmployeeDto.builder()
+                .name("t")
+                .build();
+        this.client.post()
+                .uri("/employees/v1")
+                .bodyValue(missingEmail)
+                .exchange()
+                .expectStatus().is4xxClientError()
+                .expectBody()
+                .jsonPath("$.title").isEqualTo("Invalid Input");
+
+        final EmployeeDto invalidEmail = EmployeeDto.builder()
+                .email("tt")
+                .build();
+        this.client.put()
+                .uri("/employees/v1/5")
+                .bodyValue(invalidEmail)
+                .exchange()
+                .expectStatus().is4xxClientError()
+                .expectBody()
+                .jsonPath("$.title").isEqualTo("Invalid Input");
     }
 
 }
