@@ -1,4 +1,4 @@
-package pl.mikbac.examples.example100.employeeCRUD.controller;
+package pl.mikbac.examples.example100.employeeCRUD.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -14,52 +14,51 @@ import pl.mikbac.examples.example100.employeeCRUD.dto.EmployeeDto;
 import java.util.Objects;
 
 /**
- * Created by MikBac on 5.01.2026
+ * Created by MikBac on 13.01.2026
  */
 
 @AutoConfigureWebTestClient
 @Slf4j
 @SpringBootTest(properties = {
-        "employees.functional.endpoints=false"
+        "employees.functional.endpoints=true"
 })
-class EmployeeControllerTest extends AbstractTest {
+class RouterConfigTest extends AbstractTest {
 
     @Autowired
     private WebTestClient client;
 
     @Test
-    public void getUnauthorized(){
+    public void getUnauthorized() {
         this.client.get()
-                .uri("/employees/v1")
+                .uri("/employees/v2")
                 .exchange()
                 .expectStatus().isEqualTo(HttpStatus.UNAUTHORIZED);
 
         this.client.get()
-                .uri("/employees/v1")
+                .uri("/employees/v2")
                 .header("user-token", "1223")
                 .exchange()
                 .expectStatus().isEqualTo(HttpStatus.UNAUTHORIZED);
     }
 
     @Test
-    public void getForbidden(){
+    public void getForbidden() {
         EmployeeDto employee = EmployeeDto.builder()
                 .name("t")
                 .email("t@t.com")
                 .build();
         this.client.post()
-                .uri("/employees/v1")
+                .uri("/employees/v2")
                 .header("user-token", "qwerty")
                 .bodyValue(employee)
                 .exchange()
                 .expectStatus().isEqualTo(HttpStatus.FORBIDDEN);
     }
 
-
     @Test
     public void allEmployee() {
         this.client.get()
-                .uri("/employees/v1")
+                .uri("/employees/v2")
                 .header("user-token", "qwerty")
                 .exchange()
                 .expectStatus().is2xxSuccessful()
@@ -72,7 +71,7 @@ class EmployeeControllerTest extends AbstractTest {
     @Test
     public void paginatedEmployee() {
         this.client.get()
-                .uri("/employees/v1/paginated?page=2&size=2")
+                .uri("/employees/v2/paginated?page=2&size=2")
                 .header("user-token", "qwerty")
                 .exchange()
                 .expectStatus().is2xxSuccessful()
@@ -86,7 +85,7 @@ class EmployeeControllerTest extends AbstractTest {
     @Test
     public void employeeById() {
         this.client.get()
-                .uri("/employees/v1/2")
+                .uri("/employees/v2/2")
                 .header("user-token", "qwerty")
                 .exchange()
                 .expectStatus().is2xxSuccessful()
@@ -104,7 +103,7 @@ class EmployeeControllerTest extends AbstractTest {
                 .email("t@t.com")
                 .build();
         this.client.post()
-                .uri("/employees/v1")
+                .uri("/employees/v2")
                 .header("user-token", "qwerty!")
                 .bodyValue(employee)
                 .exchange()
@@ -116,7 +115,7 @@ class EmployeeControllerTest extends AbstractTest {
                 .jsonPath("$.email").isEqualTo("t@t.com");
 
         this.client.delete()
-                .uri("/employees/v1/9")
+                .uri("/employees/v2/9")
                 .header("user-token", "qwerty!")
                 .exchange()
                 .expectStatus().is2xxSuccessful()
@@ -130,7 +129,7 @@ class EmployeeControllerTest extends AbstractTest {
                 .email("t@t.com")
                 .build();
         this.client.put()
-                .uri("/employees/v1/8")
+                .uri("/employees/v2/8")
                 .header("user-token", "qwerty!")
                 .bodyValue(employee)
                 .exchange()
@@ -145,7 +144,7 @@ class EmployeeControllerTest extends AbstractTest {
     @Test
     public void employeeNotFound() {
         this.client.get()
-                .uri("/employees/v1/99")
+                .uri("/employees/v2/99")
                 .header("user-token", "qwerty")
                 .exchange()
                 .expectStatus().is4xxClientError()
@@ -153,7 +152,7 @@ class EmployeeControllerTest extends AbstractTest {
                 .jsonPath("$.title").isEqualTo("Employee Not Found");
 
         this.client.delete()
-                .uri("/employees/v1/99")
+                .uri("/employees/v2/99")
                 .header("user-token", "qwerty!")
                 .exchange()
                 .expectStatus().is4xxClientError()
@@ -165,7 +164,7 @@ class EmployeeControllerTest extends AbstractTest {
                 .email("t@t.com")
                 .build();
         this.client.put()
-                .uri("/employees/v1/11")
+                .uri("/employees/v2/11")
                 .header("user-token", "qwerty!")
                 .bodyValue(employee)
                 .exchange()
@@ -180,7 +179,7 @@ class EmployeeControllerTest extends AbstractTest {
                 .email("t@t.com")
                 .build();
         this.client.post()
-                .uri("/employees/v1")
+                .uri("/employees/v2")
                 .header("user-token", "qwerty!")
                 .bodyValue(missingName)
                 .exchange()
@@ -192,7 +191,7 @@ class EmployeeControllerTest extends AbstractTest {
                 .name("t")
                 .build();
         this.client.post()
-                .uri("/employees/v1")
+                .uri("/employees/v2")
                 .header("user-token", "qwerty!")
                 .bodyValue(missingEmail)
                 .exchange()
@@ -204,7 +203,7 @@ class EmployeeControllerTest extends AbstractTest {
                 .email("tt")
                 .build();
         this.client.put()
-                .uri("/employees/v1/5")
+                .uri("/employees/v2/5")
                 .header("user-token", "qwerty!")
                 .bodyValue(invalidEmail)
                 .exchange()

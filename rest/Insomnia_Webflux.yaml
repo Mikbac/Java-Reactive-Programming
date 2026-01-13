@@ -1,0 +1,398 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: WebFlux
+meta:
+  id: wrk_e54137101b94449ab31815025711643d
+  created: 1767555239245
+  modified: 1767555239245
+  description: ""
+collection:
+  - name: employees-classic
+    meta:
+      id: fld_e6f4147759374ca4b91f923be0885a3a
+      created: 1767531209466
+      modified: 1768263182655
+      sortKey: -1767531209666
+      description: ""
+    children:
+      - url: http://localhost:8080/employees/v1
+        name: getAllEmployees
+        meta:
+          id: req_dc97f3737f454af29d6ad15c5b33daf6
+          created: 1767531212748
+          modified: 1768263237503
+          isPrivate: false
+          description: ""
+          sortKey: -1767531212748
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: user-token
+            value: qwerty!
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/employees/v1/2
+        name: getEmployeeById
+        meta:
+          id: req_67a9d3dbb06042d39436a2bea41a224b
+          created: 1767563695522
+          modified: 1768263262727
+          isPrivate: false
+          description: ""
+          sortKey: -1764825937864
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: user-token
+            value: qwerty!
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/employees/v1
+        name: saveEmployee
+        meta:
+          id: req_b3eff312359b413c94c0f5d89b9bd04b
+          created: 1767563825695
+          modified: 1768263264495
+          isPrivate: false
+          description: ""
+          sortKey: -1763473300422
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name":"in_test",
+            	"email": "new_inso@mail.test"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: user-token
+            value: qwerty!
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/employees/v1/9
+        name: updateEmployee
+        meta:
+          id: req_e837f52a22e34613a72e5c6741a69382
+          created: 1767563947198
+          modified: 1768263265957
+          isPrivate: false
+          description: ""
+          sortKey: -1762796981701
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name":"in_test2",
+            	"email": "new22@mail.test"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: user-token
+            value: qwerty!
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/employees/v1/99
+        name: deleteEmployee
+        meta:
+          id: req_fcbd597774fe4165a118b1fda361336e
+          created: 1767563977949
+          modified: 1768263267918
+          isPrivate: false
+          description: ""
+          sortKey: -1762458822340.5
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: user-token
+            value: qwerty!
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/employees/v1/paginated?page=2&size=2
+        name: getAllEmployeesPaginated
+        meta:
+          id: req_917afe2c585548ca9223d5a359b2cafe
+          created: 1767566260437
+          modified: 1768263260980
+          isPrivate: false
+          description: ""
+          sortKey: -1766178575306
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: user-token
+            value: qwerty!
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: employees-functional
+    meta:
+      id: fld_251c53cc4adf474d930c73bd16128a39
+      created: 1768263159667
+      modified: 1768263192868
+      sortKey: -1767531209566
+      description: ""
+    children:
+      - url: http://localhost:8080/employees/v2
+        name: getAllEmployees
+        meta:
+          id: req_54829e28ca8247a8be2288cdb42995c8
+          created: 1768263197434
+          modified: 1768263317893
+          isPrivate: false
+          description: ""
+          sortKey: -1768263200468
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: user-token
+            value: qwerty!
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/employees/v2/paginated?page=2&size=2
+        name: getAllEmployeesPaginated
+        meta:
+          id: req_accfc3d1a1724a378e7a7fb3c0158e8b
+          created: 1768263204314
+          modified: 1768263319495
+          isPrivate: false
+          description: ""
+          sortKey: -1768263200418
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: user-token
+            value: qwerty!
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/employees/v2/2
+        name: getEmployeeById
+        meta:
+          id: req_fb7da291a61645f3856851b6b3d2e213
+          created: 1768263210555
+          modified: 1768263321084
+          isPrivate: false
+          description: ""
+          sortKey: -1768263200393
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: user-token
+            value: qwerty!
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/employees/v2
+        name: saveEmployee
+        meta:
+          id: req_6e1abfe654e040fe8e0629f43c98f718
+          created: 1768263215724
+          modified: 1768263322674
+          isPrivate: false
+          description: ""
+          sortKey: -1768263200380.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name":"in_test",
+            	"email": "new_inso@mail.test"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: user-token
+            value: qwerty!
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/employees/v2/9
+        name: updateEmployee
+        meta:
+          id: req_aa406d93050d4391bf8e3c21dc142754
+          created: 1768263220464
+          modified: 1768263324007
+          isPrivate: false
+          description: ""
+          sortKey: -1768263200374.25
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name":"in_test2",
+            	"email": "new22@mail.test"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: user-token
+            value: qwerty!
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/employees/v2/99
+        name: deleteEmployee
+        meta:
+          id: req_538aa4f393ce4f2fb59ded766e656091
+          created: 1768263225135
+          modified: 1768263300141
+          isPrivate: false
+          description: ""
+          sortKey: -1768263200368
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+          - name: user-token
+            value: qwerty!
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_257d2b515e444bfbb6289c41f6691087
+    created: 1767530159661
+    modified: 1767530159661
+environments:
+  name: Base Environment
+  meta:
+    id: env_6ba539829e5d4b16ad1bbf594be7bae7
+    created: 1767530159658
+    modified: 1767530159658
+    isPrivate: false
