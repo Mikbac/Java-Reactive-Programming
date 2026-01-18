@@ -14,7 +14,7 @@ import java.net.URI;
  */
 
 @ControllerAdvice
-public class ApplicationExceptionHandler {
+public class AppExceptionHandler {
 
     @ExceptionHandler(EmployeeNotFoundException.class)
     public ProblemDetail handleException(EmployeeNotFoundException ex) {

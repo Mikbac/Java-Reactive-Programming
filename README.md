@@ -83,3 +83,4 @@
 * [Example 074 - Example sink replay](examples/src/main/java/pl/mikbac/examples/example074)
 * [Example 075 - Example context](examples/src/main/java/pl/mikbac/examples/example075)
 * [Example 100 - Webflux examples](examples/src/main/java/pl/mikbac/examples/example100)
+* [Example 101 - Webflux with functional endpoints examples](examples/src/main/java/pl/mikbac/examples/example101)

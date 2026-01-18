@@ -28,7 +28,7 @@ class EmployeeControllerTest extends AbstractTest {
     private WebTestClient client;
 
     @Test
-    public void getUnauthorized(){
+    public void getUnauthorized() {
         this.client.get()
                 .uri("/employees/v1")
                 .exchange()
@@ -42,7 +42,7 @@ class EmployeeControllerTest extends AbstractTest {
     }
 
     @Test
-    public void getForbidden(){
+    public void getForbidden() {
         EmployeeDto employee = EmployeeDto.builder()
                 .name("t")
                 .email("t@t.com")
@@ -54,7 +54,6 @@ class EmployeeControllerTest extends AbstractTest {
                 .exchange()
                 .expectStatus().isEqualTo(HttpStatus.FORBIDDEN);
     }
-
 
     @Test
     public void allEmployee() {
