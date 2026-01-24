@@ -43,3 +43,9 @@
 * request -> streaming response
 * streaming request -> response
 * bidirectional streaming
+
+## Streaming advantages
+
+* connection is established only once
+* reduction in network traffic
+* no need to wait for the previous request to complete

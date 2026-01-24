@@ -3,7 +3,6 @@ package pl.mikbac.examples.example100.employeeCRUD.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,16 +40,16 @@ public class EmployeeController {
         return employeeService.getAllEmployees();
     }
 
-    @GetMapping("paginated")
-    public Flux<EmployeeDto> getAllEmployees(@RequestParam(defaultValue = "1") Integer page,
-                                             @RequestParam(defaultValue = "3") Integer size) {
-        return employeeService.getAllEmployees(page, size);
-    }
-
     @GetMapping("{id}")
     public Mono<EmployeeDto> getEmployeeById(@PathVariable final Integer id) {
         return employeeService.getEmployeeById(id)
                 .switchIfEmpty(ApplicationExceptions.employeeNotFound(id));
+    }
+
+    @GetMapping("paginated")
+    public Flux<EmployeeDto> getAllEmployees(@RequestParam(defaultValue = "1") Integer page,
+                                             @RequestParam(defaultValue = "3") Integer size) {
+        return employeeService.getAllEmployees(page, size);
     }
 
     @PostMapping
