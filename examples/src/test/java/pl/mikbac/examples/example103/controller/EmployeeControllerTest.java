@@ -2,8 +2,6 @@ package pl.mikbac.examples.example103.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 import pl.mikbac.examples.example103.dto.EmployeeDto;
@@ -34,6 +32,21 @@ class EmployeeControllerTest {
                 .retrieve()
                 .bodyToMono(UploadResponse.class)
                 .doOnNext(r -> log.info("received: {}", r))
+                .then()
+                .as(StepVerifier::create)
+                .expectComplete()
+                .verify();
+    }
+
+    @Test
+    public void downloadEmployees() {
+        this.client.get()
+                .uri("/employees/v3/download")
+                .accept(MediaType.APPLICATION_NDJSON)
+                .retrieve()
+                .bodyToFlux(EmployeeDto.class)
+                .map(Record::toString)
+                .doOnNext(e -> log.info("received: {}", e))
                 .then()
                 .as(StepVerifier::create)
                 .expectComplete()
