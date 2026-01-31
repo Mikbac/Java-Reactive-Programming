@@ -62,7 +62,7 @@
 * [Example 052 - Example startWith](examples/src/main/java/pl/mikbac/examples/example052)
 * [Example 053 - Example concatWith](examples/src/main/java/pl/mikbac/examples/example053)
 * [Example 054 - Example merge](examples/src/main/java/pl/mikbac/examples/example054)
-* [Example 055 - Example zip](examples/src/main/java/pl/mikbac/examples/example055)
+* [Example 055 - Example zip + zipWhen](examples/src/main/java/pl/mikbac/examples/example055)
 * [Example 056 - Example flatMap mono + mono](examples/src/main/java/pl/mikbac/examples/example056)
 * [Example 057 - Example flatMap mono + flux](examples/src/main/java/pl/mikbac/examples/example057)
 * [Example 058 - Example flatMap flux + flux](examples/src/main/java/pl/mikbac/examples/example058)

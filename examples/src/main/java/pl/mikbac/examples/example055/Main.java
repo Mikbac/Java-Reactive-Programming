@@ -7,6 +7,7 @@ import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
 import java.time.Duration;
+import java.util.Map;
 import java.util.function.UnaryOperator;
 
 @Slf4j
@@ -60,6 +61,19 @@ public class Main {
 
         Thread.sleep(2000);
 
+        log.info("Example - 3");
+        Mono.just("1")
+                .zipWhen(d -> Mono.just("2"))
+                .zipWhen(d -> Mono.just("3"))
+                .map(tup -> Map.of("z1", tup.getT1(), "z2", tup.getT2()))
+                .log()
+                .subscribe();
+        //01:27:51.867 [main] | onSubscribe([Fuseable] FluxMapFuseable.MapFuseableSubscriber)
+        //01:27:51.867 [main] | request(unbounded)
+        //01:27:51.867 [main] | onNext({z1=[1,2], z2=3})
+        //01:27:51.868 [main] | onComplete()
+
+        Thread.sleep(2000);
 
     }
 

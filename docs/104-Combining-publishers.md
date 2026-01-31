@@ -31,6 +31,11 @@ function (or forms a tuple) to produce a single combined element.
 The zipped flux finishes when any of the sources completes, because pairing is no longer possible.
 This operator ensures strict alignment of items rather than ordering by time.
 
+## zipWhen
+
+zip combines multiple independent publishers in parallel, while zipWhen combines a source value with another publisher
+that is created based on that value.
+
 ## flatMap
 
 FlatMap in Project Reactor transforms each emitted item into a new reactive source and then merges all these inner
