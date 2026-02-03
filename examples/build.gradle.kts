@@ -47,6 +47,8 @@ dependencies {
     testImplementation("io.projectreactor:reactor-test")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    implementation("org.mock-server:mockserver-spring-test-listener-no-dependencies:5.15.0")
 }
 
 tasks.withType<Test> {
