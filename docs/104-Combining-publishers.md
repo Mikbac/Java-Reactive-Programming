@@ -62,3 +62,7 @@ Mono<List<T>>.
 
 Then in Project Reactor lets you ignore the emissions of a publisher and continue with another reactive sequence only
 after the first one completes.
+
+## thenReturn
+
+In Project Reactor, thenReturn ignores the previous emission and, upon completion, emits a specified value instead.
