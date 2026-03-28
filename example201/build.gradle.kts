@@ -1,16 +1,16 @@
 plugins {
     java
-    id("org.springframework.boot") version "4.0.3"
+    id("org.springframework.boot") version "4.0.4"
     id("io.spring.dependency-management") version "1.1.7"
 }
 
 group = "pl.mikbac"
 version = "0.0.1-SNAPSHOT"
-description = "example200"
+description = "example201"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 
@@ -25,12 +25,10 @@ repositories {
 }
 
 dependencies {
-    implementation(platform("io.projectreactor:reactor-bom:2025.0.0-M7"))
-
-    implementation("org.springframework.boot:spring-boot-starter")
-
-    implementation("io.projectreactor:reactor-core")
-    implementation("org.redisson:redisson:4.3.0")
+    implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("org.redisson:redisson-spring-boot-starter:4.3.0")
+    implementation("org.redisson:redisson-spring-cache:4.3.0")
 
     implementation("com.fasterxml.jackson.core:jackson-core:2.21.1")
     implementation("com.fasterxml.jackson.core:jackson-annotations:2.21")
@@ -39,8 +37,8 @@ dependencies {
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
 
-    testImplementation("io.projectreactor:reactor-test")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-data-redis-reactive-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-webflux-test")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
