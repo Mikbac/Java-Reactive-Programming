@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.mikbac.example202.model.UserModel;
-import pl.mikbac.example202.service.UserService;
+import pl.mikbac.example202.service.UserServiceV1;
 import reactor.core.publisher.Mono;
 
 /**
@@ -18,9 +18,9 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("users/v1")
 @RequiredArgsConstructor
-public class UserController {
+public class UserControllerV1 {
 
-    private final UserService userService;
+    private final UserServiceV1 userService;
 
     @GetMapping("{id}")
     public Mono<UserModel> getUser(@PathVariable int id){

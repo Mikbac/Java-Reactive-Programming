@@ -12,22 +12,16 @@ import reactor.core.publisher.Mono;
 
 @Service
 @AllArgsConstructor
-public class UserService {
+public class UserServiceV2 {
 
-    private UserRepository userRepository;
+    private UserCacheService cacheService;
 
     public Mono<UserModel> getUser(int id) {
-        return userRepository.findById(id);
+        return cacheService.get(id);
     }
 
     public Mono<UserModel> updateUser(int id, Mono<UserModel> userMono) {
-        return userRepository.findById(id)
-                .flatMap(eu -> userMono.map(uu -> {
-                            eu.setUsername(uu.getUsername());
-                            eu.setEmail(uu.getEmail());
-                            return eu;
-                        })
-                ).flatMap(userRepository::save);
+        return userMono.flatMap(u -> cacheService.update(id, u));
     }
 
 }

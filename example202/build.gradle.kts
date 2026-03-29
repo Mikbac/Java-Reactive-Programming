@@ -32,6 +32,13 @@ dependencies {
     implementation("org.flywaydb:flyway-core:12.1.1")
     implementation("org.flywaydb:flyway-database-postgresql:12.1.1")
 
+    implementation("org.redisson:redisson-spring-boot-starter:4.3.0")
+    implementation("org.redisson:redisson-spring-cache:4.3.0")
+
+    implementation("com.fasterxml.jackson.core:jackson-core:2.21.1")
+    implementation("com.fasterxml.jackson.core:jackson-annotations:2.21")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.21.1")
+
     compileOnly("org.projectlombok:lombok")
 
     runtimeOnly("org.postgresql:postgresql")
