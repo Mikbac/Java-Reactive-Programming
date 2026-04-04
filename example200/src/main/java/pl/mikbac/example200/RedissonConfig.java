@@ -19,6 +19,8 @@ public class RedissonConfig {
         Config config = new Config();
         config.useSingleServer()
                 .setAddress("redis://127.0.0.1:6379");
+//        config.setUsername("user");
+//        config.setPassword("pass");
         return Redisson.create(config);
     }
 
