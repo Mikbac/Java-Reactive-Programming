@@ -99,3 +99,5 @@
 * [Example 201 - Webflux with Redisson example](example201)
 * [Example 202 - Webflux with Redisson and Postgres](example202)
 * [Example 203 - Counter witch cache](example203)
+* [Example 204 - WebSocket with pub/sub](example204)
+* [Example 205 - Redisson geo](example205)
